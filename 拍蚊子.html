@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+    <title>拍蚊子游戏</title>
+    <style>
+
+        /* 小屏幕手机端 */
+			@media (min-width: 0px) and (max-width:768px) {
+				.div1{
+					width: 100px;
+					height: 100px;
+					background-color: red;
+				}
+			}
+			
+			/* 中等屏幕（桌面显示器，大于等于 992px） */
+			@media (min-width: 768px) and (max-width:992px){
+				.div1{
+					width: 300px;
+					height: 300px;
+					background-color: blue;
+				}
+			}
+			
+			/* 大屏幕（大桌面显示器，大于等于 1200px） */
+			@media (min-width: 992px) {
+				.div1{
+					width: 500px;
+					height: 500px;
+					background-color: aqua;
+				}
+			}
+
+        #game {
+            width: 400px;
+            height: 500px;
+            border: 1px solid black;
+            position: relative;
+        }
+        .mosquito {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        #score {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+         .mosquito:hover {
+        cursor: url('swatter.png'), auto;
+    }
+    </style>
+</head>
+<body>
+
+<div id="game">
+    <div id="score">0</div>
+</div>
+
+<script>
+    let game = document.querySelector('#game');
+    let scoreElement = document.querySelector('#score');
+    let score = 0;
+
+    function createMosquito() {
+        let mosquito = document.createElement('img');
+        mosquito.src = 'mosquito.png';
+        mosquito.className = 'mosquito';
+        mosquito.onclick = function() { killMosquito(mosquito) };
+        game.appendChild(mosquito);
+        moveMosquito(mosquito);
+
+        setTimeout(function() {
+        mosquito.remove();
+    }, 5000); // 蚊子将在 5000 毫秒（5 秒）后自动消失
+    }
+
+    function moveMosquito(mosquito) {
+        let x = Math.random() * (game.offsetWidth - mosquito.offsetWidth);
+        let y = Math.random() * (game.offsetHeight - mosquito.offsetHeight);
+        mosquito.style.left = x + 'px';
+        mosquito.style.top = y + 'px';
+    }
+
+    setInterval(createMosquito, 1000);
+
+    function killMosquito(mosquito) {
+      mosquito.remove();
+      score++;
+      scoreElement.textContent = score;
+   }
+
+    
+</script>
+
+</body>
+</html>
