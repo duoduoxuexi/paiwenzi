@@ -115,9 +115,9 @@ body {
     left: 0;
     width: 100%;
     text-align: center;
-    color: rgb(233, 138, 131);
+    color:#FEF002;
     font-size: 4em;
-    text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+    /* text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff; */
     overflow: hidden;
 }
 
@@ -200,7 +200,7 @@ body {
 }
 
 .bad {
-    background-color: rgb(211, 91, 91);
+    background-color: rgb(236, 19, 19);
     -webkit-animation: flash .2s 3;
     animation: flash .2s 3;
 }
@@ -210,6 +210,7 @@ body {
     -ms-tap-highlight-color: rgba(0, 0, 0, 0);
     -ms-user-select: none;
 }
+
 
 /* 结算字体颜色 */
 #GameScoreLayer {
