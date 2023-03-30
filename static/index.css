@@ -159,8 +159,8 @@ body {
 .tt3,
 .tt4,
 .tt5 {
-    background-size: auto 86%;
-    background-image: url(./image/xueji.png);
+    background-size: auto 100%;
+    background-image: url(./image/xueji.jpg);
 }
 
 /* 竖线颜色 */
