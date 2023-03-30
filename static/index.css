@@ -211,11 +211,12 @@ body {
     -ms-user-select: none;
 }
 
+/* 结算字体颜色 */
 #GameScoreLayer {
     padding-top: 2em;
     font-size: 2em;
     font-weight: bold;
-    color: #251c1c;
+    color: #f51313;
     text-align: center;
     overflow: hidden;
 }
